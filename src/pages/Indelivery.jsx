@@ -3,10 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
-const Deliverypage = () => {
-    const { id } = useParams();
-    const order = useLoaderData();
-
+const Indelivery = () => {
     return (
         <>
             <section>
@@ -42,14 +39,14 @@ const Deliverypage = () => {
                                     {order.price}
                                 </p>
                             </div>
-                            <div className="bg-white text-center p-6 rounded-lg shadow-md mt-6">
-                                <Link
-                                    to={``}
-                                    className="text-red-600 border-red-600 border-2 bg-white 
-                                    rounded-lg p-2 font-semibold shadow-xl  hover:bg-red-600 hover:text-white transition ease-out duration-500 py-2 px-4 w-full focus:outline-none focus:shadow-outline"
-                                >
-                                    Accept
-                                </Link>
+                            <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+                                <h3 className="text-gray-800 text-lg font-bold mb-6">
+                                Message
+                                </h3>
+                                <p className="mb-4">
+                                </p>
+                                <h3 className="text-gray-800 text-lg font-bold mb-2">Special Instructions</h3>
+                                <p className="mb-4"></p>
                             </div>
                         </main>
                     </div>
@@ -58,10 +55,5 @@ const Deliverypage = () => {
         </>
     );
 }
-
-const orderLoader = async ({params}) => {
-    const res = await axios.get(`http://localhost:8080/orders/${params.id}`);
-    return res.data
-}
  
-export { Deliverypage as default, orderLoader } ;
+export default Indelivery;

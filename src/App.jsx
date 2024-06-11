@@ -9,6 +9,8 @@ import MainLayout from "./Layouts/MainLayout";
 import HomePage from "./pages/Homepage";
 import Deliveriespage from "./pages/Deliveriespage";
 import Deliverypage, {orderLoader} from "./pages/Deliverypage";
+import Aboutpage from "./pages/Aboutpage";
+import Indelivery from "./pages/Indelivery";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -17,6 +19,7 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/orders' element={<Deliveriespage />} />
         <Route path='/orders/:id' element={<Deliverypage />} loader={orderLoader} />
+        <Route path='/about' element={<Aboutpage />} />
       </Route>
     )
   );
