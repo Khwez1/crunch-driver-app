@@ -1,9 +1,11 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 const Aboutpage = () => {
     return (
         <>
+        <Header/>
             <section className="border-b border-gray-300">
                 <div className="container m-auto py-6 px-6">
                 <Link

@@ -1,28 +1,28 @@
-import React from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../utils/AuthContext'
+import { useAuth } from '../utils/AuthContext';
 
 const RegisterComponent = () => {
-    const registerForm = useRef(null)
-    const {registerUser} = useAuth()
+    const registerForm = useRef(null);
+    const { registerUser } = useAuth();
 
     const handleSubmit = (e) => {
-    e.preventDefault()
+        e.preventDefault();
 
-    const name = registerForm.current.name.value
-    const email = registerForm.current.email.value
-    const password1 = registerForm.current.password1.value
-    const password2 = registerForm.current.password2.value
+        const name = registerForm.current.name.value;
+        const email = registerForm.current.email.value;
+        const password1 = registerForm.current.password1.value;
+        const password2 = registerForm.current.password2.value;
 
-    if(password1 !== password2){
-        alert('Passwords did not match!')
-        return 
-    }
-    
-    const userInfo = {name, email, password1, password2}
+        if (password1 !== password2) {
+            alert('Passwords did not match!');
+            return;
+        }
 
-    registerUser(userInfo)
-}
+        const userInfo = { name, email, password1, password2 };
+
+        registerUser(userInfo);
+    };
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -71,11 +71,12 @@ const RegisterComponent = () => {
                         />
                     </div>
                     <div className="mb-6">
-                        <input 
+                        <button 
                             type="submit" 
-                            value="Register"
                             className="w-full bg-red-500 text-white shadow-xl font-bold py-2 px-4 rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
-                        />
+                        >
+                            Register
+                        </button>
                     </div>
                 </form>
                 <p className="text-center text-gray-600">

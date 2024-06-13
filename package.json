@@ -11,7 +11,7 @@
     "server": "json-server --watch src/deliveries.json --port 8080"
   },
   "dependencies": {
-    "appwrite": "^15.0.0",
+    "appwrite": "^11.0.1",
     "axios": "^1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
